@@ -1,19 +1,16 @@
-import React, { useState } from 'react';
-import LoginPage from './LoginPage.jsx';
-import MoodLogPage from './MoodLogPage.jsx';
+import Navbar from './Components/Navbar';
+import HeroSection from './Components/HeroSection';
+import MainContent from './Components/MainContent';
 
-const App = () => {
-    const [token, setToken] = useState(localStorage.getItem('token') || '');
-
-    return (
-        <div>
-            {!token ? (
-                <LoginPage setToken={setToken} />
-            ) : (
-                <MoodLogPage token={token} />
-            )}
-        </div>
-    );
-};
+function App() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white to-purple-50">
+      <h2>hello</h2>
+      <Navbar />
+      <HeroSection />
+      <MainContent />
+    </div>
+  );
+}
 
 export default App;
