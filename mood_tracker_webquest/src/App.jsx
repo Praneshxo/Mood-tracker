@@ -1,23 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import Hero from './Components/Hero.jsx'
-import Navbar from './Components/Navbar.jsx'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Navbar from './Components/Navbar';
+import HeroSection from './Components/HeroSection';
+import MainContent from './Components/MainContent';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <Navbar />
-      <Hero />
-        <h1>hello</h1>
-        
-        </div>
-    </>
-  )
+    <div className="min-h-screen bg-gradient-to-b from-white to-purple-50">
+      <h2>hello</h2>
+      <Navbar />
+      <HeroSection />
+      <MainContent />
+    </div>
+  );
 }
 
-export default App
+export default App;
