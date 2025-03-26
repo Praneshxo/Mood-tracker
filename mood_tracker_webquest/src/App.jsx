@@ -1,23 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import Hero from './Components/Hero.jsx'
-import Navbar from './Components/Navbar.jsx'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import LoginPage from './LoginPage.jsx';
+import MoodLogPage from './MoodLogPage.jsx';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+    const [token, setToken] = useState(localStorage.getItem('token') || '');
 
-  return (
-    <>
-      <div>
-        <Navbar />
-      <Hero />
-        <h1>hello</h1>
-        
+    return (
+        <div>
+            {!token ? (
+                <LoginPage setToken={setToken} />
+            ) : (
+                <MoodLogPage token={token} />
+            )}
         </div>
-    </>
-  )
-}
+    );
+};
 
-export default App
+export default App;
